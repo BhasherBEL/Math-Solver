@@ -8,44 +8,16 @@ class FormatError(SyntaxError):
         super().__init__(message)
 
 
-class SumList(list):
-    def __init__(self, lst=None):
-        super().__init__([] if lst is None else lst)
-
+class OperationList(list):
     def __repr__(self):
-        return 'SumList' + super().__repr__()
+        return self.__class__.__name__ + super().__repr__()
 
 
-class SousList(list):
-    def __init__(self, lst=None):
-        super().__init__([] if lst is None else lst)
-
-    def __repr__(self):
-        return 'SousList' + super().__repr__()
-
-
-class MulList(list):
-    def __init__(self, lst=None):
-        super().__init__([] if lst is None else lst)
-
-    def __repr__(self):
-        return 'MulList' + super().__repr__()
-
-
-class DivList(list):
-    def __init__(self, lst=None):
-        super().__init__([] if lst is None else lst)
-
-    def __repr__(self):
-        return 'DivList' + super().__repr__()
-
-
-class ExpList(list):
-    def __init__(self, lst=None):
-        super().__init__([] if lst is None else lst)
-
-    def __repr__(self):
-        return 'ExpList' + super().__repr__()
+class SumList(OperationList): pass
+class SousList(OperationList): pass
+class MulList(OperationList): pass
+class DivList(OperationList): pass
+class ExpList(OperationList): pass
 
 
 def content_validate(equation):
